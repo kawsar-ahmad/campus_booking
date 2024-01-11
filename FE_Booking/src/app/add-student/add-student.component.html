@@ -1,0 +1,40 @@
+
+
+  <mat-tab-group>
+    <mat-tab label="Individual">
+      <mat-card>
+      
+        <form [formGroup]="dateForm" fxLayout="column"
+          style="width: 40%;margin-left: auto;margin-right: auto;margin-top: 200px;">
+          <mat-form-field>
+            <mat-label>Student Name</mat-label>
+            <input matInput placeholder="Event name" formControlName="name">
+            <mat-hint></mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Student Roll</mat-label>
+            <input matInput placeholder="Student Roll" formControlName="roll">
+            <mat-hint></mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>CGPA</mat-label>
+            <input matInput placeholder="CGPA" formControlName="cgpa">
+            <mat-hint></mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Series</mat-label>
+            <input matInput placeholder="Series" formControlName="series">
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </form>
+        <div style="padding-left: 350px">
+          <button mat-raised-button color="primary" (click)="submitdate()">
+           Add
+          </button>
+        </div>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="CSV">
+      <app-upload-file [type]="'student'"></app-upload-file>
+    </mat-tab>
+  </mat-tab-group>

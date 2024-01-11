@@ -1,0 +1,30 @@
+
+
+  <mat-tab-group>
+    <mat-tab label="Individual">
+        <mat-card>
+            <form [formGroup]="advisorForm" fxLayout="column"
+              style="width: 40%;margin-left: auto;margin-right: auto;margin-top: 200px;">
+              <mat-form-field>
+                <mat-label>Advisor Name</mat-label>
+                <input matInput placeholder="Event name" formControlName="name">
+                <mat-hint></mat-hint>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select [placeholder]="'Select Designation'" [formControlName]="'designation'" [required]="true">
+                  <mat-option *ngFor="let type of typeList" [value]="type">{{type}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+            <div style="padding-left: 350px">
+              <button mat-raised-button color="primary" (click)="submitAdvisor()">
+               Add
+              </button>
+            </div>
+          </mat-card>
+    </mat-tab>
+    <mat-tab label="CSV">
+      <app-upload-file [type]="'advisor'"></app-upload-file>
+    </mat-tab>
+  </mat-tab-group>

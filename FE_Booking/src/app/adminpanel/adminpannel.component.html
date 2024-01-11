@@ -1,0 +1,33 @@
+<div *ngIf="isLoading">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" class='header'>
+  
+</div>
+<div fxLayout="row" fxLayoutAlign="end center" class="header-button">
+  <button mat-raised-button (click)="generate()">Generate</button>
+</div>
+<mat-tab-group>
+  <mat-tab label="Add New Student">
+   <app-add-student>
+
+   </app-add-student>
+  </mat-tab>
+  <mat-tab label="Add Advisors">
+    <app-add-advisor></app-add-advisor>
+  </mat-tab>
+  <mat-tab label="Students List">
+    <div style="padding-left: 10px;">
+
+      <app-students-list></app-students-list>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="Advisors List">
+    <div style="padding-left: 10px;">
+
+      <app-advisors-list></app-advisors-list>
+    </div>
+
+  </mat-tab>
+</mat-tab-group>
